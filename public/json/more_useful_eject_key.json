@@ -1,0 +1,79 @@
+{
+    "title": "More useful Eject key",
+    "rules": [
+      {
+        "description": "Eject to Insert (with optional CTRL or SHIFT), Fn+Eject to Lock Screen",
+        "manipulators": [
+            {
+                "type": "basic",
+                "from": {
+                  "consumer_key_code": "eject"
+                },
+                "to_if_alone": [
+                    {
+                        "repeat": false,
+                        "key_code": "insert"
+                    }
+                ]
+            },
+            {
+                "type": "basic",
+                "from": {
+                "modifiers": {
+                    "mandatory": [
+                    "fn"
+                    ]
+                },
+                "consumer_key_code": "eject"
+            },
+            "to": [
+                {
+                    "repeat": false,
+                    "consumer_key_code": "al_terminal_lock_or_screensaver"
+                }
+            ]
+          },
+          {
+            "type": "basic",
+            "from": {
+              "modifiers": {
+                "mandatory": [
+                  "control"
+                ]
+              },
+              "consumer_key_code": "eject"
+            },
+            "to": [
+                {
+                    "repeat": false,
+                    "key_code": "insert",
+                    "modifiers": [
+                        "control"
+                    ]
+                }
+            ]
+          },
+          {
+            "type": "basic",
+            "from": {
+              "modifiers": {
+                "optional": [
+                  "shift"
+                ]
+              },
+              "consumer_key_code": "eject"
+            },
+            "to": [
+                {
+                    "repeat": false,
+                    "key_code": "insert",
+                    "modifiers": [
+                        "shift"
+                      ]
+                }
+            ]
+          }
+        ]
+      }
+    ]
+}
